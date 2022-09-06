@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            width: 100%;
+            display: flex;
+        }
+
+        body {
+            overflow: hidden;
+            margin: 0;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .controls {
+            padding: 16px;
+            width: 50%;
+        }
+
+        .canvas-container {
+            width: 50%;
+        }
+    </style>
+    <title>Simple 3D viewer</title>
+</head>
+<body>
+    <div class="container">
+        <div id="canvas-container"></div>
+        <div class="controls">
+                <form>
+                    <fieldset>
+                        <legend>Model options</legend>
+                        <input type="range" name="modelScale" id="modelScale" min="0.1" max="10" value="1" step="0.1">
+                        <label for="modelScale">Scale</label><br>
+                        <input type="range" name="modelXRotation" id="modelXRotation" min="0" max="360" value="0"
+                            step="0.1">
+                        <label for="modelXRotation">X axis rotation</label><br>
+                        <input type="range" name="modelYRotation" id="modelYRotation" min="0" max="360" value="0"
+                            step="0.1">
+                        <label for="modelYRotation">Y axis rotation</label><br>
+                        <input type="range" name="modelZRotation" id="modelZRotation" min="0" max="360" value="0"
+                            step="0.1">
+                        <label for="modelZRotation">Z axis rotation</label><br>
+                        <input type="checkbox" name="showGeometry" id="showGeometry">
+                        <label for="showGeometry">Show geometry</label>
+                        <input type="color" name="geometryColor" id="geometryColor" value="#000000">
+                        <label for="modelScale">Geometry color</label><br>
+                        <hr>
+                        <input type="checkbox" name="flipXAxis" id="flipXAxis" checked>
+                        <label for="flipXAxis">Flip X axis</label>
+                        <input type="checkbox" name="flipYAxis" id="flipYAxis" checked>
+                        <label for="flipYAxis">Flip Y axis</label>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Ambient options</legend>
+                        <input type="checkbox" name="useAmbientLight" id="useAmbientLight">
+                        <label for="useAmbientLight">Use ambient light</label>
+                        <input type="color" name="ambientLightColor" id="ambientLightColor" value="#cccccc">
+                        <label for="ambientLightColor">Ambient Light Color</label><br>
+                        <input type="color" name="worldBackgroundColor" id="worldBackgroundColor">
+                        <label for="worldBackgroundColor">Background color</label>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Render mode</legend>
+                        <input type="radio" id="modeNormalMaterial" name="renderMode" value="0">
+                        <label for="modeNormalMaterial">Normal Material</label><br>
+                        <input type="radio" id="modeSpecularMaterial" name="renderMode" value="1">
+                        <label for="modeSpecularMaterial">Specular Material</label>
+                        <input type="range" name="shininessValue" id="shininessValue" min="1" max="100" step="0.1"
+                            value="20">
+                        <label for="shininessValue">Shininess</label><br>
+                        <input type="radio" id="modeAmbientMaterial" name="renderMode" value="2" checked>
+                        <label for="modeAmbientMaterial">Ambient Material</label><br>
+                        <input type="radio" id="modeEmissiveMaterial" name="renderMode" value="3">
+                        <label for="modeEmissiveMaterial">Emissive Material</label><br>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Material settings</legend>
+                        <input type="color" name="materialColor" id="materialColor" value="#DBDBDB">
+                        <label for="materialColor">Material color</label>
+                    </fieldset>
+                    <br>
+                </form>
+                <p>Press 0 to recenter view</p>
+        </div>
+    </div>
+    <script src="p5.js"></script>
+    <script src="simple3DViewer.js"></script>
+</body>
+</html>
