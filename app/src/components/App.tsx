@@ -1,6 +1,10 @@
+import BaseLayout from "@/layouts/BaseLayout";
+
 const App = () => {
     return (
-        <main></main>
+        <BaseLayout>
+
+        </BaseLayout>
     )
 }
 
