@@ -1,0 +1,22 @@
+{
+  "name": "simple-3d-viewer",
+  "version": "0.0.1",
+  "description": "A simple 3D viewer for browsers.",
+  "main": "simple3DViewer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briancaldera/Simple-3D-viewer.git"
+  },
+  "author": "Brian Caldera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/briancaldera/Simple-3D-viewer/issues"
+  },
+  "homepage": "https://github.com/briancaldera/Simple-3D-viewer#readme",
+  "dependencies": {
+    "p5": "^1.4.2"
+  }
+}
